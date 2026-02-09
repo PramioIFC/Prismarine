@@ -3,8 +3,14 @@
 
 ## Como usar
 
+Certifique-se que está em **..\Prismarine**
+
 ```bash
 npm install
 ```
 
-- **`npm run dev`** — Start dev server with HMR
+e então
+
+```bash
+npm run dev
+```
