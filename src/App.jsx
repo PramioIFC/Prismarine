@@ -1,7 +1,10 @@
+import prismarineLogo from './public/prismarineLogo.png'
+
 function App() {
   return (
     <div className="app">
-      <h1>Prismarine</h1>
+      <img id="prismarineLogo" src={prismarineLogo} alt="Prismarine" />
+      <h1 id="prismarineTitle">Prismarine</h1>
       <p>*isso aqui é o <code>src/App.jsx</code></p>
     </div>
   )
