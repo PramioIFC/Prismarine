@@ -16,9 +16,14 @@ function App() {
 
       <main className="app">
         <div id="inicio" className="section hero">
-          <img id="prismarineLogo" src={prismarineLogo} alt="Prismarine" />
-          <h1 id="prismarineTitle">Prismarine</h1>
-          <h2>Início</h2>
+          {/* <img id="prismarineLogo" src={prismarineLogo} alt="Prismarine" /> */}
+          <h1 id="prismarineFrase">
+            Seja Livre
+            <br />
+            como o
+            <br />
+            Mar
+          </h1>
         </div>
 
         <div id="objetivos" className="section objetivos">

@@ -18,16 +18,14 @@ body {
   overflow-x: hidden;
 }
 
-#prismarineTitle {
-  background: #73C9CF;
-  background: radial-gradient(farthest-corner at center center, rgb(29, 56, 44) 0%, rgb(26, 56, 45) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: clamp(2.5rem, 12vw + 2rem, 10rem);
+/* Hero phrase */
+#prismarineFrase {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 6vw + 1.5rem, 5rem);
   transition: transform 0.3s ease-in-out;
   line-height: 1.1;
   word-break: break-word;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 #prismarineLogo {
@@ -39,7 +37,7 @@ body {
 }
 
 #prismarineLogo:hover,
-#prismarineTitle:hover {
+#prismarineFrase:hover {
   transform: scale(1.1);
 }
 
@@ -98,17 +96,61 @@ body {
   flex-direction: column;
   align-items: stretch;
   text-align: center;
-  padding: clamp(1rem, 4vw, 2rem);
+  padding: 0;
   min-height: 0;
 }
-
+ 
 .section {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  padding: clamp(1rem, 4vw, 2rem);
+}
+
+.section.hero {
+  padding: clamp(1rem, 4vw, 2.5rem);
+  justify-content: flex-end;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: url('./public/hero.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.05);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+#prismarineFrase {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+}
+
+#prismarineFrase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+  z-index: -1;
 }
 
 .section h2 {
@@ -168,7 +210,7 @@ body {
 }
 
 @media (min-width: 1920px) {
-  .app {
+  /* .app {
     padding: 3rem 2rem;
-  }
+  } */
 }
