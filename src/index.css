@@ -192,6 +192,120 @@ body {
   word-break: break-word;
 }
 
+/* ===== SEÇÃO SERVIÇOS - CAROUSEL ===== */
+.servicos {
+  background: linear-gradient(135deg, rgba(29, 56, 44, 0.8) 0%, rgba(51, 76, 68, 0.8) 100%);
+  min-height: auto;
+  padding: 4rem clamp(1rem, 4vw, 2rem);
+}
+
+.servicos h2 {
+  margin-bottom: 2rem;
+  color: #73C9CF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.servicos-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem clamp(1rem, 4vw, 2rem);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-btn {
+  min-width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  background: rgba(115, 201, 207, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+  background: rgba(115, 201, 207, 1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn-prev {
+  order: -1;
+}
+
+/* CARDS SERVIÇOS */
+.servicos-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+}
+
+.servicos-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  border-color: #127369;
+  background: rgba(255, 255, 255, 1);
+}
+
+.card-icon {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.servicos-card:hover .card-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.servicos-card h3 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #10403B;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.servicos-card p {
+  font-size: 0.95rem;
+  color: #4C5958;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== FIM SEÇÃO SERVIÇOS ===== */
+
 /* Responsive breakpoints */
 @media (max-width: 480px) {
   .header {
@@ -206,6 +320,29 @@ body {
 
   .footer p {
     padding: 0 0.5rem;
+  }
+
+  .carousel {
+    gap: 0.75rem;
+  }
+
+  .carousel-btn {
+    min-width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .carousel-track {
+    gap: 1rem;
+  }
+
+  .servicos-card {
+    flex: 0 0 calc(50% - 0.5rem);
+    padding: 1.5rem 1rem;
+  }
+
+  .servicos-container {
+    padding: 1.5rem 1rem;
   }
 }
 
