@@ -96,11 +96,24 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
   text-align: center;
   padding: clamp(1rem, 4vw, 2rem);
   min-height: 0;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+  color: #e8f4f0;
 }
 
 .footer {
