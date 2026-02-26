@@ -1,4 +1,4 @@
-import prismarineLogo from './public/prismarineLogo.png'
+import prismarinelogo from './public/prismaraine.png'
 import { useRef } from 'react'
 
 function App() {
@@ -62,9 +62,9 @@ function App() {
 
   return (
     <div className="layout">
-      <header className="header">
-        <span className="header-logo">Prismarine</span>
-        <nav className="header-nav">
+      <header className="header" role="banner">
+        <img id="header-logo" src={prismarinelogo} alt="Logo Prismarine" />
+        <nav className="header-nav" role="navigation" aria-label="Navegação principal">
           <a href="#inicio">Início</a>
           <a href="#objetivos">Objetivos</a>
           <a href="#servicos">Serviços</a>

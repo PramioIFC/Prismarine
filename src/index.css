@@ -5,12 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.montserrat-custom {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+:root {
+  --header-height: clamp(60px, 12vw, 80px);
+  --header-padding-vertical: 0.5rem;
+  --header-padding-horizontal: clamp(1rem, 4vw, 2rem);
+  --header-logo-size: clamp(4.5rem, 10vw, 9rem);
 }
 
 html {
@@ -19,18 +18,26 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(rgba(174, 141, 228, 0.596), transparent);
   background-color: rgb(99, 161, 161);
   overflow-x: hidden;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Hero phrase */
 #prismarineFrase {
   color: #ffffff;
   font-size: clamp(2.5rem, 6vw + 1.5rem, 5rem);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
   transition: transform 0.3s ease-in-out;
   line-height: 1.1;
   word-break: break-word;
@@ -60,49 +67,66 @@ body {
   flex-direction: column;
 }
 
+/* Header ---------------------------------------------------- */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 0.75rem;
   padding: var(--header-padding-vertical) var(--header-padding-horizontal);
-  background: rgba(23, 40, 32, 0.95);
-  color: #e8f4f0;
+  background:#ddffff;
+  color: #000000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
 
 #header-logo {
   width: var(--header-logo-size);
-  height: auto;
-  border-radius: 10px;
+  height: var(--header-logo-size);
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
+
+#header-logo:hover {
+  transform: scale(1.05);
+}
+
 .header-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0.75rem, 2vw, 1.5rem);
+  gap: clamp(1rem, 2vw, 2rem);
   justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  margin-left: auto;
 }
 
 .header-nav a {
   color: inherit;
   text-decoration: none;
   opacity: 0.9;
-  transition: opacity 0.2s;
-  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1rem);
+  transition: all 0.3s ease;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   white-space: nowrap;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .header-nav a:hover {
   opacity: 1;
-transform: scale(1.1);
+  color: #10403B;
+  transform: scale(1.1);
 }
 
+/* Header ---------------------------------------------------- */
 .app {
   flex: 1;
   display: flex;
@@ -110,6 +134,7 @@ transform: scale(1.1);
   align-items: stretch;
   text-align: center;
   padding: 0;
+  margin-top: var(--header-height);
   min-height: 0;
 }
  
@@ -123,7 +148,10 @@ transform: scale(1.1);
 }
 
 .section.hero {
-  padding: clamp(1rem, 4vw, 2.5rem);
+  padding-top: 0;
+  padding-left: clamp(1rem, 4vw, 2.5rem);
+  padding-right: clamp(1rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1rem, 4vw, 2rem);
   justify-content: flex-end;
 }
 
@@ -169,40 +197,48 @@ transform: scale(1.1);
 .section h2 {
   font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
   color: #e8f4f0;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 
 .footer {
   padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
   text-align: center;
-  background: rgba(23, 40, 32, 0.85);
+  background: rgba(23, 40, 32, 0.9);
   color: #e8f4f0;
   font-size: clamp(0.75rem, 1.5vw + 0.5rem, 0.875rem);
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  font-family: "Montserrat", sans-serif;
 }
 
 .footer p {
   margin: 0;
   color: inherit;
   opacity: 0.9;
+  font-weight: 400;
 }
 
 .app h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 
 .app p {
-  color: #666;
+  color: #e8f4f0;
   font-size: clamp(0.875rem, 2vw + 0.5rem, 1rem);
   max-width: 90ch;
+  font-family: "Montserrat", sans-serif;
 }
 
 .app code {
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
   padding: 0.2em 0.4em;
   border-radius: 4px;
   font-size: clamp(0.8em, 1.5vw + 0.5em, 0.9em);
   word-break: break-word;
+  font-family: 'Courier New', monospace;
 }
 
 /* ===== SEÇÃO SERVIÇOS - CAROUSEL ===== */
@@ -308,6 +344,7 @@ transform: scale(1.1);
   color: #10403B;
   margin-bottom: 0.75rem;
   font-weight: 600;
+  font-family: "Montserrat", sans-serif;
 }
 
 .servicos-card p {
@@ -315,24 +352,37 @@ transform: scale(1.1);
   color: #4C5958;
   line-height: 1.5;
   margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ===== FIM SEÇÃO SERVIÇOS ===== */
 
 /* Responsive breakpoints */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .header-nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
     justify-content: center;
+    margin-left: 0;
+  }
+
+  .header-nav a {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
   }
 
   .footer p {
     padding: 0 0.5rem;
+  }
+
+  .app {
+    margin-top: var(--header-height);
   }
 
   .carousel {
