@@ -252,6 +252,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== SEÇÃO SERVIÇOS - CAROUSEL ===== */
 .servicos {
   background: linear-gradient(135deg, rgba(29, 56, 44, 0.8) 0%, rgba(51, 76, 68, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
   min-height: auto;
   padding: 4rem clamp(1rem, 4vw, 2rem);
 }
