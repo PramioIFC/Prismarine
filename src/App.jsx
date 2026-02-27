@@ -77,11 +77,11 @@ function App() {
         <div id="inicio" className="section hero">
           {/* <img id="prismarineLogo" src={prismarineLogo} alt="Prismarine" /> */}
           <h1 id="prismarineFrase">
-            Seja Livre
+            <span className="hero-frase-light">Seja Livre</span>
             <br />
-            como o
+            <span className="hero-frase-light">como o</span>
             <br />
-            Mar
+            <span className="hero-frase-mar">Mar</span>
           </h1>
         </div>
 
