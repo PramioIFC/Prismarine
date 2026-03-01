@@ -137,30 +137,30 @@ function App() {
         </div>
 
         <div id="equipe" className="section equipe">
-          <h2>Equipe</h2>
-        </div>
-
-        <div id="sobre" className="section sobre">
-          <div className="sobre-content">
-            <h2>Sobre Nós</h2>
-            <p className="sobre-descricao">
+          <div className="equipe-content">
+            <h2>Equipe</h2>
+            <p className="equipe-descricao">
               Conheça quem está por trás da Prismarine:
             </p>
 
-            <div className="sobre-grid">
+            <div className="equipe-grid">
               {teamMembers.map((member, index) => (
-                <div key={index} className="sobre-card">
-                  <div className="sobre-avatar">
+                <div key={index} className="equipe-card">
+                  <div className="equipe-avatar">
                     <img src={member.photo} alt={member.name} loading="lazy" />
                   </div>
-                  <div className="sobre-info">
-                    <p className="sobre-nome">{member.name}</p>
-                    <p className="sobre-cargo">{member.role}</p>
+                  <div className="equipe-info">
+                    <p className="equipe-nome">{member.name}</p>
+                    <p className="equipe-cargo">{member.role}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+
+        <div id="sobre" className="section sobre">
+          <h2>Sobre Nós</h2>
         </div>
       </main>
 

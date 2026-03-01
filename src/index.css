@@ -367,36 +367,36 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== FIM SEÇÃO SERVIÇOS ===== */
 
-/* ===== SEÇÃO SOBRE NÓS / EQUIPE ===== */
-.sobre {
+/* ===== SEÇÃO EQUIPE ===== */
+.equipe {
   background: linear-gradient(135deg, rgba(16, 64, 59, 0.9) 0%, rgba(23, 40, 32, 0.95) 100%);
   color: #e8f4f0;
 }
 
-.sobre-content {
+.equipe-content {
   max-width: 1100px;
   margin: 0 auto;
   text-align: left;
 }
 
-.sobre h2 {
+.equipe h2 {
   margin-bottom: 1rem;
   color: #73C9CF;
 }
 
-.sobre-descricao {
+.equipe-descricao {
   margin-bottom: 2rem;
   color: #d4efeb;
 }
 
-.sobre-grid {
+.equipe-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 2rem;
   justify-content: center;
 }
 
-.sobre-card {
+.equipe-card {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   padding: 1.9rem 1.6rem;
@@ -408,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(115, 201, 207, 0.25);
 }
 
-.sobre-avatar {
+.equipe-avatar {
   width: 74px;
   height: 74px;
   border-radius: 50%;
@@ -423,41 +423,41 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
-.sobre-avatar img {
+.equipe-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.sobre-info {
+.equipe-info {
   display: flex;
   flex-direction: column;
 }
 
-.sobre-nome {
+.equipe-nome {
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 0.25rem;
 }
 
-.sobre-cargo {
+.equipe-cargo {
   font-size: 0.9rem;
   color: rgba(232, 244, 240, 0.75); /* cor mais fraca para o cargo */
 }
 
 @media (max-width: 900px) {
-  .sobre-grid {
+  .equipe-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 600px) {
-  .sobre-grid {
+  .equipe-grid {
     grid-template-columns: 1fr;
   }
 
-  .sobre-card {
+  .equipe-card {
     padding: 1.25rem 1rem;
   }
 }
