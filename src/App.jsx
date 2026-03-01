@@ -1,4 +1,9 @@
 import prismarinelogo from './public/prismaraine.png'
+import pramioImg from './public/equipe/pramio.png'
+import brunoImg from './public/equipe/bruno.png'
+import lucasImg from './public/equipe/lucas.png'
+import joaoImg from './public/equipe/joao.png'
+import nataliaImg from './public/equipe/natalia.png'
 import { useRef } from 'react'
 
 function App() {
@@ -59,6 +64,14 @@ function App() {
 
   // Duplica os cards para criar o loop infinito
   const duplicatedCards = [...cards, ...cards]
+
+  const teamMembers = [
+    { name: 'João Pramio', role: 'Líder', photo: pramioImg },
+    { name: 'Bruno Gelain', role: 'Desenvolvedor', photo: brunoImg },
+    { name: 'Lucas Weber', role: 'Desenvolvedor', photo: lucasImg },
+    { name: 'João Pedro', role: 'Desenvolvedor', photo: joaoImg },
+    { name: 'Natália sobrenome', role: 'Desenvolvedor', photo: nataliaImg }
+  ]
 
   return (
     <div className="layout">
@@ -128,7 +141,26 @@ function App() {
         </div>
 
         <div id="sobre" className="section sobre">
-          <h2>Sobre Nós</h2>
+          <div className="sobre-content">
+            <h2>Sobre Nós</h2>
+            <p className="sobre-descricao">
+              Conheça quem está por trás da Prismarine:
+            </p>
+
+            <div className="sobre-grid">
+              {teamMembers.map((member, index) => (
+                <div key={index} className="sobre-card">
+                  <div className="sobre-avatar">
+                    <img src={member.photo} alt={member.name} loading="lazy" />
+                  </div>
+                  <div className="sobre-info">
+                    <p className="sobre-nome">{member.name}</p>
+                    <p className="sobre-cargo">{member.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </main>
 
