@@ -262,6 +262,133 @@ export function LucasPortfolio() {
     <div className="portfolio-content">
       <h3>Lucas Weber Moraes</h3>
       <h4>Estudante de Informática | Desenvolvedor em Aprendizado</h4>
+      <p className="portfolio-location">Concórdia, SC</p>
+
+      <section>
+        <h4>Sobre Mim</h4>
+        <p>
+          Estudante do <strong>IFC Campus Concórdia</strong> no curso de
+          Informática. Sou apaixonado por <strong>áudio‑visual</strong> (edição de
+          vídeo) e tenho interesse em <strong>criação de jogos</strong>. Estou
+          sempre estudando novas tecnologias e procuro me manter alinhado ao que
+          meus colegas João e Bruno aprendem, embora esteja um pouco atrás em
+          experiência. Possuo conhecimento básico de inglês aplicado à
+          programação.
+        </p>
+      </section>
+
+      <section>
+        <h4>Tecnologias que utilizo</h4>
+        <ul>
+          <li>
+            <strong>Linguagens:</strong> Java, JavaScript, Python.
+          </li>
+          <li>
+            <strong>Ferramentas:</strong> Git, GitHub, editores de vídeo (DaVinci
+            Resolve, Adobe Premiere).
+          </li>
+          <li>
+            <strong>Interesses:</strong> Gamedev, edição de vídeo, lógica de
+            programação.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Projetos em Destaque</h4>
+
+        <h5>1. Protótipo de Jogo 2D</h5>
+        <p>
+          Desenvolvimento de um pequeno jogo de plataforma em JavaScript durante
+          um trabalho escolar.
+        </p>
+        <ul>
+          <li>
+            <strong>O Desafio:</strong> Aprender os conceitos de física básica e
+            animação em canvas.
+          </li>
+          <li>
+            <strong>Aprendizado:</strong> Manipulação de sprites, loop de jogo e
+            detecção de colisão.
+          </li>
+        </ul>
+
+        <h5>2. Vídeo+Edição para Evento</h5>
+        <p>
+          Edição de um clipe de apresentação para um evento estudantil, usando
+          software de edição e efeitos simples.
+        </p>
+        <ul>
+          <li>
+            <strong>O Desafio:</strong> Sincronizar áudio com imagens e aplicar
+            cortes dinâmicos.
+          </li>
+          <li>
+            <strong>Resultado:</strong> Vídeo final curto e atrativo que foi
+            exibido no evento.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Conquistas e Formação</h4>
+        <ul>
+          <li>
+            <strong>Ensino Médio Técnico:</strong> IFC - Instituto Federal
+            Catarinense (Concórdia).
+          </li>
+          <li>
+            <strong>Participação em Projetos:</strong> Colaboração em trabalhos
+            de grupo focados em jogos e edição de mídia.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Habilidades Técnicas</h4>
+        <table className="portfolio-table">
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Tecnologias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linguagens</td>
+              <td>Java, JavaScript, Python</td>
+            </tr>
+            <tr>
+              <td>Ferramentas</td>
+              <td>Git, GitHub, DaVinci Resolve, Premiere</td>
+            </tr>
+            <tr>
+              <td>Interesses</td>
+              <td>Gamedev, Edição de Vídeo, Web</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h4>Vamos conversar?</h4>
+        <ul>
+          <li>
+            <strong>GitHub:</strong>{' '}
+            <a
+              href="https://github.com/lwmorais"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/lwmorais
+            </a>
+          </li>
+          <li>
+            <strong>E-mail:</strong>{' '}
+            <a href="mailto:lwemorais@gmail.com">lwemorais@gmail.com</a>
+          </li>
+        </ul>
+      </section>
     </div>
   )
 }

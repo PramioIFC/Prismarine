@@ -5,67 +5,21 @@ import lucasImg from './public/equipe/lucas.png'
 import joaoImg from './public/equipe/joao.png'
 import nataliaImg from './public/equipe/natalia.png'
 import { portfolios } from './portfolios'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 function App() {
-  const carouselRef = useRef(null)
   const [selectedMember, setSelectedMember] = useState(null)
 
-  const handleCarouselScroll = (direction) => {
-    const carousel = carouselRef.current
-    if (!carousel) return
-
-    const card = carousel.querySelector('.servicos-card')
-    if (!card) return
-
-    const cardWidth = card.offsetWidth
-    const gap = 24
-    const scrollAmount = (cardWidth + gap) * 3
-
-    const currentScroll = carousel.scrollLeft
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth
-
-    if (direction === 'next') {
-      // Se chegou no final, volta para o inicio criando efeito infinito
-      if (currentScroll + scrollAmount >= maxScroll - 10) {
-        carousel.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-        })
-      } else {
-        carousel.scrollBy({
-          left: scrollAmount,
-          behavior: 'smooth'
-        })
-      }
-    } else {
-      // Se está no inicio, volta para o final criando efeito infinito
-      if (currentScroll <= scrollAmount + 10) {
-        carousel.scrollTo({
-          left: maxScroll,
-          behavior: 'smooth'
-        })
-      } else {
-        carousel.scrollBy({
-          left: -scrollAmount,
-          behavior: 'smooth'
-        })
-      }
-    }
-  }
-
-  // Lista original de serviços
-  const cards = [
+  const services = [
     { icon: '💻', title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
     { icon: '🎨', title: 'Design', desc: 'Interfaces modernas e intuitivas' },
     { icon: '⚙️', title: 'Desenvolvimento', desc: 'Código limpo e eficiente' },
     { icon: '📱', title: 'Aplicativos Mobile', desc: 'Apps responsivos e rápidos' },
     { icon: '🔒', title: 'Segurança', desc: 'Proteção de dados garantida' },
-    { icon: '📊', title: 'Analytics', desc: 'Dados para decisões melhores' }
+    { icon: '📊', title: 'Analytics', desc: 'Dados para decisões melhores' },
+    { icon: '📈', title: 'Marketing Digital', desc: 'Campanhas eficazes e SEO' },
+    { icon: '🛠️', title: 'Suporte 24/7', desc: 'Atendimento contínuo para sua empresa' }
   ]
-
-  // Duplica os cards para criar o loop infinito
-  const duplicatedCards = [...cards, ...cards]
 
   const teamMembers = [
     { name: 'João Pramio', role: 'Líder', photo: pramioImg },
@@ -104,37 +58,19 @@ function App() {
           <h2>Objetivos</h2>
         </div>
 
-        <div id="servicos" className="section servicos">
-          <h2>Serviços</h2>
-
-          <div className="servicos-container">
-            <div className="carousel">
-              <button 
-                className="carousel-btn carousel-btn-prev" 
-                aria-label="Anterior"
-                onClick={() => handleCarouselScroll('prev')}
-              >
-                ❮
-              </button>
-              
-              <div className="carousel-track" ref={carouselRef}>
-                {duplicatedCards.map((card, index) => (
-                  <div key={index} className="servicos-card">
-                    <div className="card-icon">{card.icon}</div>
-                    <h3>{card.title}</h3>
-                    <p>{card.desc}</p>
-                  </div>
-                ))}
+        <div id="servicos" className="section servicos" role="region" aria-labelledby="servicos-title">
+          <h2 id="servicos-title">Serviços</h2>
+          <p className="servicos-intro">
+            Oferecemos uma gama completa de serviços digitais para conectar você ao futuro.
+          </p>
+          <div className="servicos-grid">
+            {services.map((card, index) => (
+              <div key={index} className="servico-card">
+                <div className="servico-icon">{card.icon}</div>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
               </div>
-              
-              <button 
-                className="carousel-btn carousel-btn-next" 
-                aria-label="Próximo"
-                onClick={() => handleCarouselScroll('next')}
-              >
-                ❯
-              </button>
-            </div>
+            ))}
           </div>
         </div>
 
