@@ -74,9 +74,10 @@ function App() {
                 margin: '1.5rem auto 2rem'
               }}
             >
-              Nosso objetivo é ser referência em soluções digitais que aproximam pessoas, marcas e resultados,
-              oferecendo uma experiência profissional, organizada e confiável em cada etapa da sua jornada
-              conosco.
+              Nosso objetivo é ser referência em tecnologia para música: unindo um aplicativo próprio de
+              streaming, uma loja de produtos de áudio e serviços especializados para quem vive de som. Queremos
+              que artistas, ouvintes e negócios encontrem em um só lugar tudo o que precisam para se conectar à
+              música com qualidade e segurança.
             </p>
 
             <div
@@ -96,8 +97,9 @@ function App() {
                 </div>
                 <h3 style={{ fontSize: '1.25rem' }}>Jornada simples e intuitiva</h3>
                 <p style={{ fontSize: '1rem' }}>
-                  Criar uma navegação leve e agradável, com informações claras e organização visual que torne
-                  cada escolha mais fácil e segura.
+                  Criar uma experiência leve e agradável para descobrir músicas, montar playlists e encontrar
+                  equipamentos de áudio. Tudo com navegação clara, visual organizado e passos simples, tanto no
+                  app quanto na loja de produtos.
                 </p>
               </div>
 
@@ -110,8 +112,9 @@ function App() {
                 </div>
                 <h3 style={{ fontSize: '1.25rem' }}>Valor em cada solução</h3>
                 <p style={{ fontSize: '1rem' }}>
-                  Entregar produtos e serviços digitais que realmente gerem impacto no dia a dia, ajudando
-                  pessoas e empresas a crescerem com tecnologia.
+                  Entregar soluções que realmente façam diferença no dia a dia: software de streaming, venda de
+                  caixas de som e equipamentos de áudio, além de serviços como segurança de rede e análise de
+                  dados para projetos musicais e ambientes acadêmicos.
                 </p>
               </div>
 
@@ -124,8 +127,9 @@ function App() {
                 </div>
                 <h3 style={{ fontSize: '1.25rem' }}>Relacionamento de longo prazo</h3>
                 <p style={{ fontSize: '1rem' }}>
-                  Construir uma relação sólida, transparente e próxima, acompanhando sua evolução e estando
-                  presente sempre que você precisar da Prismarine.
+                  Construir uma relação sólida, transparente e próxima, acompanhando a evolução de artistas,
+                  produtores, instituições e empresas que confiam na Prismarine para cuidar da parte tecnológica
+                  e da infraestrutura ligada à música.
                 </p>
               </div>
             </div>
@@ -139,8 +143,8 @@ function App() {
               }}
             >
               Em tudo o que fazemos, buscamos unir <strong>conveniência, confiança e qualidade</strong>, para
-              que a Prismarine seja lembrada como a escolha certa quando o assunto é presença digital e
-              inovação.
+              que a Prismarine seja lembrada como a escolha certa quando o assunto é música, tecnologia,
+              streaming e serviços profissionais conectados a esse universo.
             </p>
           </div>
         </div>
@@ -217,7 +221,8 @@ function App() {
                   <p style={{ fontSize: '1.02rem' }}>
                     Unimos especialistas em <strong>design</strong>, <strong>desenvolvimento</strong>,
                     <strong> usabilidade</strong> e <strong>estratégia digital</strong> para criar soluções
-                    completas, com identidade forte e foco em resultado.
+                    focadas no universo da música: do aplicativo de streaming à loja de equipamentos de áudio e
+                    à oferta de serviços técnicos.
                   </p>
                 </div>
 
@@ -231,7 +236,8 @@ function App() {
                   <h3 style={{ fontSize: '1.25rem' }}>Processo transparente</h3>
                   <p style={{ fontSize: '1.02rem' }}>
                     Acompanhamos cada etapa ao lado do cliente, com comunicação clara, prazos bem definidos e
-                    decisões tomadas sempre com base em dados e objetivos reais.
+                    decisões baseadas em dados: seja para evoluir o app de música, estruturar a vitrine de
+                    produtos de áudio ou desenhar serviços como segurança de rede e análise de uso.
                   </p>
                 </div>
 
@@ -244,8 +250,9 @@ function App() {
                   </div>
                   <h3 style={{ fontSize: '1.25rem' }}>Parceria de longo prazo</h3>
                   <p style={{ fontSize: '1.02rem' }}>
-                    Mais do que projetos pontuais, buscamos relações duradouras, ajudando nossos clientes a
-                    crescer, evoluir sua presença digital e explorar novas oportunidades com segurança.
+                    Mais do que projetos pontuais, entregamos uma plataforma completa: ouvir música, consumir
+                    conteúdo, adquirir equipamentos de áudio e contar com serviços profissionais que sustentem
+                    esse ecossistema com segurança e desempenho.
                   </p>
                 </div>
               </div>
@@ -254,18 +261,20 @@ function App() {
                 className="sobre-intro"
                 style={{ fontSize: '1.1rem', maxWidth: '720px', margin: '2rem auto 0' }}
               >
-                A Prismarine nasceu com o propósito de conectar tecnologia e pessoas de forma simples,
-                elegante e eficiente. Somos uma equipe apaixonada por experiências digitais e comprometida em
-                transformar ideias em soluções reais para o dia a dia de nossos clientes.
+                A Prismarine nasceu com o propósito de aproximar pessoas da música por meio da tecnologia. Somos
+                uma empresa de software voltada para o cenário musical, que desenvolve um aplicativo de
+                streaming, uma plataforma de gestão e uma loja de produtos de áudio, além de serviços técnicos
+                que dão suporte a tudo isso.
               </p>
 
               <p
                 className="sobre-texto"
                 style={{ fontSize: '1.05rem', maxWidth: '720px', margin: '1rem auto 0' }}
               >
-                Nosso compromisso é estar sempre próximo, ouvindo, entendendo e construindo junto. É assim que
-                a Prismarine se posiciona como um parceiro de confiança para quem quer dar o próximo passo no
-                mundo digital com profissionalismo e consistência.
+                Nosso compromisso é estar sempre próximo, ouvindo, entendendo e construindo junto com artistas,
+                produtores, instituições e empresas. É assim que a Prismarine se posiciona como um parceiro de
+                confiança para quem quer dar o próximo passo no mundo da música e da tecnologia, com soluções
+                que vão do app ao hardware e à infraestrutura de rede.
               </p>
             </div>
           </div>
