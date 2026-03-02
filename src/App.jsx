@@ -256,26 +256,6 @@ function App() {
                   </p>
                 </div>
               </div>
-
-              <p
-                className="sobre-intro"
-                style={{ fontSize: '1.1rem', maxWidth: '720px', margin: '2rem auto 0' }}
-              >
-                A Prismarine nasceu com o propósito de aproximar pessoas da música por meio da tecnologia. Somos
-                uma empresa de software voltada para o cenário musical, que desenvolve um aplicativo de
-                streaming, uma plataforma de gestão e uma loja de produtos de áudio, além de serviços técnicos
-                que dão suporte a tudo isso.
-              </p>
-
-              <p
-                className="sobre-texto"
-                style={{ fontSize: '1.05rem', maxWidth: '720px', margin: '1rem auto 0' }}
-              >
-                Nosso compromisso é estar sempre próximo, ouvindo, entendendo e construindo junto com artistas,
-                produtores, instituições e empresas. É assim que a Prismarine se posiciona como um parceiro de
-                confiança para quem quer dar o próximo passo no mundo da música e da tecnologia, com soluções
-                que vão do app ao hardware e à infraestrutura de rede.
-              </p>
             </div>
           </div>
         </div>
