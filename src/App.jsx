@@ -46,11 +46,11 @@ function App() {
         <div id="inicio" className="section hero">
           {/* <img id="prismarineLogo" src={prismarineLogo} alt="Prismarine" /> */}
           <h1 id="prismarineFrase">
-            <span className="hero-frase-light">Seja Livre</span>
+            <span className="hero-frase-light">Siga o</span>
             <br />
-            <span className="hero-frase-light">como o</span>
+            <span className="hero-frase-light">seu próprio</span>
             <br />
-            <span className="hero-frase-mar">Mar</span>
+            <span className="hero-frase-mar">Fluxo</span>
           </h1>
         </div>
 
