@@ -75,9 +75,7 @@ function App() {
               }}
             >
               Nosso objetivo é ser referência em tecnologia para música: unindo um aplicativo próprio de
-              streaming, uma loja de produtos de áudio e serviços especializados para quem vive de som. Queremos
-              que artistas, ouvintes e negócios encontrem em um só lugar tudo o que precisam para se conectar à
-              música com qualidade e segurança.
+              streaming, uma loja de produtos de áudio e serviços especializados para quem vive de som.
             </p>
 
             <div
@@ -133,19 +131,6 @@ function App() {
                 </p>
               </div>
             </div>
-
-            <p
-              className="objetivos-texto"
-              style={{
-                fontSize: '1.05rem',
-                maxWidth: '700px',
-                margin: '2rem auto 0'
-              }}
-            >
-              Em tudo o que fazemos, buscamos unir <strong>conveniência, confiança e qualidade</strong>, para
-              que a Prismarine seja lembrada como a escolha certa quando o assunto é música, tecnologia,
-              streaming e serviços profissionais conectados a esse universo.
-            </p>
           </div>
         </div>
 
