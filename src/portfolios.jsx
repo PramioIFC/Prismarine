@@ -396,8 +396,126 @@ export function LucasPortfolio() {
 export function JoaoPortfolio() {
   return (
     <div className="portfolio-content">
-      <h3>João Pedro alguma coisa</h3>
+      <h3>João Pedro</h3>
       <h4>Estudante de Informática | Desenvolvedor em Aprendizado</h4>
+      <p className="portfolio-location">Concórdia, SC</p>
+
+      <section>
+        <h4>Sobre Mim</h4>
+        <p>
+          Estudante do <strong>IFC Campus Concórdia</strong> no curso de
+          Informática. Participei da confecção do site e dos projetos da <strong>Prismarine</strong>,
+          atuando no desenvolvimento e na estruturação das páginas. Gosto de <strong>esportes</strong>,
+          <strong> jogar videogames</strong>, <strong>desenhar</strong> e tenho interesse em <strong>arquitetura</strong>.
+          Busco evoluir nas tecnologias web e contribuir com a equipe em soluções práticas e criativas.
+        </p>
+      </section>
+
+      <section>
+        <h4>Tecnologias que utilizo</h4>
+        <ul>
+          <li>
+            <strong>Linguagens:</strong> JavaScript, React, HTML, CSS, Python.
+          </li>
+          <li>
+            <strong>Ferramentas:</strong> Git, GitHub.
+          </li>
+          <li>
+            <strong>Foco:</strong> Desenvolvimento web, interface e experiência do usuário.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Projetos em Destaque</h4>
+
+        <h5>1. Prismarine (Site e Projetos)</h5>
+        <p>
+          Participação na confecção do site institucional e nas funcionalidades da Prismarine.
+        </p>
+        <ul>
+          <li>
+            <strong>Atuação:</strong> Desenvolvimento de seções, layout e integração com o restante da equipe.
+          </li>
+          <li>
+            <strong>Destaque:</strong> Contribuição para a estrutura e o conteúdo das páginas, mantendo padrão e organização.
+          </li>
+        </ul>
+
+        <h5>2. Sistema de Aluguel de Salas e Espaços Acadêmicos</h5>
+        <p>
+          Projeto focado em organizar o uso de salas de aula, laboratórios e espaços acadêmicos por meio de um sistema simples de reserva.
+        </p>
+        <ul>
+          <li>
+            <strong>O Desafio:</strong> Evitar conflitos de horário e tornar mais claro quem está utilizando cada espaço em determinado momento.
+          </li>
+          <li>
+            <strong>Atuação:</strong> Apoio na construção das telas e do fluxo de agendamento, deixando o uso mais intuitivo para os usuários.
+          </li>
+          <li>
+            <strong>Aprendizado:</strong> Organização de informações, regras de disponibilidade por horário e importância de uma interface clara.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Conquistas e Formação</h4>
+        <ul>
+          <li>
+            <strong>Ensino Médio Técnico:</strong> IFC - Instituto Federal Catarinense (Concórdia).
+          </li>
+          <li>
+            <strong>Participação na Prismarine:</strong> Experiência em desenvolvimento em equipe e confecção de projetos web.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Habilidades Técnicas</h4>
+        <table className="portfolio-table">
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Tecnologias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linguagens</td>
+              <td>JavaScript, React, HTML, CSS, Python</td>
+            </tr>
+            <tr>
+              <td>Versionamento</td>
+              <td>Git, GitHub</td>
+            </tr>
+            <tr>
+              <td>Interesses</td>
+              <td>Web, Esportes, Videogames, Desenho, Arquitetura</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h4>Vamos conversar?</h4>
+        <ul>
+          <li>
+            <strong>GitHub:</strong>{' '}
+            <a
+              href="https://github.com/JPBordin08"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/JPBordin08
+            </a>
+          </li>
+          <li>
+            <strong>E-mail:</strong>{' '}
+            <a href="mailto:jpsbordin@gmail.com">jpsbordin@gmail.com</a>
+          </li>
+        </ul>
+      </section>
     </div>
   )
 }
@@ -405,8 +523,115 @@ export function JoaoPortfolio() {
 export function NataliaPortfolio() {
   return (
     <div className="portfolio-content">
-      <h3>Natália putx Martins</h3>
-      <h4>Estudante de Informática | Desenvolvedor em Aprendizado</h4>
+      <h3>Natália Martins</h3>
+      <h4>Estudante de Informática | Desenvolvedora em Aprendizado</h4>
+      <p className="portfolio-location">Concórdia, SC</p>
+
+      <section>
+        <h4>Sobre Mim</h4>
+        <p>
+          Estudante de <strong>Informática</strong> no <strong>IFC Campus Concórdia</strong>. Participo dos
+          projetos da <strong>Prismarine</strong> apoiando o time no desenvolvimento e, principalmente, na
+          organização do conteúdo e na qualidade visual das páginas. Gosto de trabalhar com atenção aos detalhes,
+          deixando as informações mais claras, consistentes e fáceis de navegar, e no meu tempo livre gosto de
+          praticar esportes e desenhar.
+        </p>
+      </section>
+
+      <section>
+        <h4>Tecnologias que utilizo</h4>
+        <ul>
+          <li>
+            <strong>Linguagens:</strong> HTML, CSS, JavaScript e noções de React.
+          </li>
+          <li>
+            <strong>Ferramentas:</strong> Git, GitHub, Figma/Canva.
+          </li>
+          <li>
+            <strong>Foco:</strong> Frontend, organização de conteúdo e experiência do usuário.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Projetos em Destaque</h4>
+
+        <h5>1. Prismarine (Interface e Organização)</h5>
+        <p>
+          Participação na construção e revisão do site institucional, com foco em organização, consistência e
+          apresentação das seções.
+        </p>
+        <ul>
+          <li>
+            <strong>Atuação:</strong> Revisão de textos, organização de informações e suporte na estrutura das
+            seções para manter um padrão visual e uma navegação mais intuitiva.
+          </li>
+          <li>
+            <strong>Destaque:</strong> Atenção aos detalhes para deixar o conteúdo mais profissional e fácil de
+            entender.
+          </li>
+        </ul>
+
+        <h5>2. Apoio em Projetos Web (Trabalhos Acadêmicos)</h5>
+        <p>
+          Participação em atividades e projetos acadêmicos envolvendo construção de páginas e organização de
+          conteúdo para apresentação online.
+        </p>
+        <ul>
+          <li>
+            <strong>Atuação:</strong> Ajustes de layout, padronização visual e revisão geral para melhorar a
+            experiência de leitura.
+          </li>
+          <li>
+            <strong>Aprendizado:</strong> Estruturação de conteúdo, responsividade e cuidado com consistência de
+            interface.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Conquistas e Formação</h4>
+        <ul>
+          <li>
+            <strong>Ensino Médio Técnico:</strong> IFC - Instituto Federal Catarinense (Concórdia).
+          </li>
+          <li>
+            <strong>Participação na Prismarine:</strong> Experiência prática em trabalho em equipe, revisão e
+            desenvolvimento de páginas web.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Habilidades Técnicas</h4>
+        <table className="portfolio-table">
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Tecnologias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Frontend</td>
+              <td>HTML, CSS, JavaScript, noções de React</td>
+            </tr>
+            <tr>
+              <td>Ferramentas</td>
+              <td>Git, GitHub, Figma, Canva</td>
+            </tr>
+            <tr>
+              <td>Interesses</td>
+              <td>Frontend, UX/UI, Organização Visual, Projetos Web</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h4>Vamos conversar?</h4>
+        <p>Contato e redes em breve.</p>
+      </section>
     </div>
   )
 }
@@ -427,6 +652,6 @@ export const portfolios = {
   'João Pramio': PramioPortfolio,
   'Lucas Weber': LucasPortfolio,
   'João Pedro': JoaoPortfolio,
-  'Natália': NataliaPortfolio,
+  'Natália Martins': NataliaPortfolio,
 }
 
