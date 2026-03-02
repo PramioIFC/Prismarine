@@ -4,10 +4,12 @@ import brunoImg from './public/equipe/bruno.png'
 import lucasImg from './public/equipe/lucas.png'
 import joaoImg from './public/equipe/joao.png'
 import nataliaImg from './public/equipe/natalia.png'
-import { useRef } from 'react'
+import { portfolios } from './portfolios'
+import { useRef, useState } from 'react'
 
 function App() {
   const carouselRef = useRef(null)
+  const [selectedMember, setSelectedMember] = useState(null)
 
   const handleCarouselScroll = (direction) => {
     const carousel = carouselRef.current
@@ -70,7 +72,7 @@ function App() {
     { name: 'Bruno Gelain', role: 'Desenvolvedor', photo: brunoImg },
     { name: 'Lucas Weber', role: 'Desenvolvedor', photo: lucasImg },
     { name: 'João Pedro', role: 'Desenvolvedor', photo: joaoImg },
-    { name: 'Natália sobrenome', role: 'Desenvolvedor', photo: nataliaImg }
+    { name: 'Natália Martins', role: 'Desenvolvedor', photo: nataliaImg }
   ]
 
   return (
@@ -140,12 +142,17 @@ function App() {
           <div className="equipe-content">
             <h2>Equipe</h2>
             <p className="equipe-descricao">
-              Conheça quem está por trás da Prismarine:
+              Conheça quem está por trás da Prismarine. Clique em um integrante para ver o portfólio.
             </p>
 
             <div className="equipe-grid">
               {teamMembers.map((member, index) => (
-                <div key={index} className="equipe-card">
+                <button
+                  key={index}
+                  type="button"
+                  className="equipe-card"
+                  onClick={() => setSelectedMember(member)}
+                >
                   <div className="equipe-avatar">
                     <img src={member.photo} alt={member.name} loading="lazy" />
                   </div>
@@ -153,7 +160,7 @@ function App() {
                     <p className="equipe-nome">{member.name}</p>
                     <p className="equipe-cargo">{member.role}</p>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -162,6 +169,55 @@ function App() {
         <div id="sobre" className="section sobre">
           <h2>Sobre Nós</h2>
         </div>
+
+        {selectedMember && (
+          <div
+            className="portfolio-modal-backdrop"
+            onClick={() => setSelectedMember(null)}
+          >
+            <div
+              className="portfolio-modal"
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="portfolio-title"
+            >
+              <button
+                type="button"
+                className="portfolio-close"
+                onClick={() => setSelectedMember(null)}
+                aria-label="Fechar portfólio"
+              >
+                ×
+              </button>
+
+              <div className="portfolio-header">
+                <div className="portfolio-header-avatar">
+                  <img src={selectedMember.photo} alt={selectedMember.name} />
+                </div>
+                <div>
+                  <h2 id="portfolio-title" className="portfolio-header-nome">
+                    {selectedMember.name}
+                  </h2>
+                  <p className="portfolio-header-cargo">
+                    {selectedMember.role}
+                  </p>
+                </div>
+              </div>
+
+              <div className="portfolio-body">
+                {(() => {
+                  const PortfolioComponent = portfolios[selectedMember.name]
+                  return PortfolioComponent ? (
+                    <PortfolioComponent />
+                  ) : (
+                    <p>Portfólio em construção.</p>
+                  )
+                })()}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <footer className="footer">
