@@ -55,7 +55,103 @@ function App() {
         </div>
 
         <div id="objetivos" className="section objetivos">
-          <h2>Objetivos</h2>
+          <div className="section-inner section-inner-centered objetivos-inner" style={{ textAlign: 'center' }}>
+            <div className="objetivos-content">
+              <h2 className="section-title" style={{ fontSize: '2.4rem' }}>
+                Objetivos
+              </h2>
+              <span
+                className="section-subtitle"
+                style={{ textTransform: 'uppercase', letterSpacing: '0.14em', fontSize: '0.95rem' }}
+              >
+                ONDE QUEREMOS CHEGAR COMO EMPRESA
+              </span>
+
+              <p
+                className="objetivos-intro"
+                style={{
+                  fontSize: '1.1rem',
+                  maxWidth: '720px',
+                  margin: '1.5rem auto 2rem'
+                }}
+              >
+                Nosso objetivo é ser referência em soluções digitais que aproximam pessoas, marcas e resultados,
+                oferecendo uma experiência profissional, organizada e confiável em cada etapa da sua jornada
+                conosco.
+              </p>
+
+              <div
+                className="objetivos-grid servicos-grid"
+                style={{
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  gap: '1.75rem'
+                }}
+              >
+                <div className="objetivo-card servico-card">
+                  <div
+                    className="objetivo-etiqueta"
+                    style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.85rem' }}
+                  >
+                    FOCO NA EXPERIÊNCIA
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem' }}>Jornada simples e intuitiva</h3>
+                  <p style={{ fontSize: '1rem' }}>
+                    Criar uma navegação leve e agradável, com informações claras e organização visual que torne
+                    cada escolha mais fácil e segura.
+                  </p>
+                </div>
+
+                <div className="objetivo-card servico-card">
+                  <div
+                    className="objetivo-etiqueta"
+                    style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.85rem' }}
+                  >
+                    RESULTADO PARA O CLIENTE
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem' }}>Valor em cada solução</h3>
+                  <p style={{ fontSize: '1rem' }}>
+                    Entregar produtos e serviços digitais que realmente gerem impacto no dia a dia, ajudando
+                    pessoas e empresas a crescerem com tecnologia.
+                  </p>
+                </div>
+
+                <div className="objetivo-card servico-card">
+                  <div
+                    className="objetivo-etiqueta"
+                    style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.85rem' }}
+                  >
+                    CONFIANÇA E PARCERIA
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem' }}>Relacionamento de longo prazo</h3>
+                  <p style={{ fontSize: '1rem' }}>
+                    Construir uma relação sólida, transparente e próxima, acompanhando sua evolução e estando
+                    presente sempre que você precisar da Prismarine.
+                  </p>
+                </div>
+              </div>
+
+              <p
+                className="objetivos-texto"
+                style={{
+                  fontSize: '1.05rem',
+                  maxWidth: '700px',
+                  margin: '2rem auto 0'
+                }}
+              >
+                Em tudo o que fazemos, buscamos unir <strong>conveniência, confiança e qualidade</strong>, para
+                que a Prismarine seja lembrada como a escolha certa quando o assunto é presença digital e
+                inovação.
+              </p>
+            </div>
+
+            <div className="objetivos-media">
+              {/* Espaço reservado para imagem relacionada aos objetivos da empresa */}
+              <div className="objetivos-media-placeholder" aria-hidden="true">
+                Espaço para imagem dos nossos objetivos
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="servicos" className="section servicos" role="region" aria-labelledby="servicos-title">
@@ -103,7 +199,94 @@ function App() {
         </div>
 
         <div id="sobre" className="section sobre">
-          <h2>Sobre Nós</h2>
+          <div className="section-inner section-inner-centered sobre-inner">
+            <div className="sobre-content" style={{ textAlign: 'center' }}>
+              <h2 className="section-title" style={{ fontSize: '2.4rem' }}>
+                Sobre Nós
+              </h2>
+              <span
+                className="section-subtitle"
+                style={{ textTransform: 'uppercase', letterSpacing: '0.14em', fontSize: '0.95rem' }}
+              >
+                A ESSÊNCIA POR TRÁS DA PRISMARINE
+              </span>
+
+              <div className="sobre-text-block">
+                <div
+                  className="sobre-destaques"
+                  style={{ display: 'grid', gap: '1.75rem', marginTop: '2rem' }}
+                >
+                  <div className="sobre-destaque-card servico-card">
+                    <div
+                      className="sobre-destaque-etiqueta"
+                      style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.85rem' }}
+                    >
+                      QUEM SOMOS
+                    </div>
+                    <h3 style={{ fontSize: '1.25rem' }}>Equipe multidisciplinar</h3>
+                    <p style={{ fontSize: '1.02rem' }}>
+                      Unimos especialistas em <strong>design</strong>, <strong>desenvolvimento</strong>,
+                      <strong> usabilidade</strong> e <strong>estratégia digital</strong> para criar soluções
+                      completas, com identidade forte e foco em resultado.
+                    </p>
+                  </div>
+
+                  <div className="sobre-destaque-card servico-card">
+                    <div
+                      className="sobre-destaque-etiqueta"
+                      style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.85rem' }}
+                    >
+                      COMO TRABALHAMOS
+                    </div>
+                    <h3 style={{ fontSize: '1.25rem' }}>Processo transparente</h3>
+                    <p style={{ fontSize: '1.02rem' }}>
+                      Acompanhamos cada etapa ao lado do cliente, com comunicação clara, prazos bem definidos e
+                      decisões tomadas sempre com base em dados e objetivos reais.
+                    </p>
+                  </div>
+
+                  <div className="sobre-destaque-card servico-card">
+                    <div
+                      className="sobre-destaque-etiqueta"
+                      style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: '0.85rem' }}
+                    >
+                      O QUE ENTREGAMOS
+                    </div>
+                    <h3 style={{ fontSize: '1.25rem' }}>Parceria de longo prazo</h3>
+                    <p style={{ fontSize: '1.02rem' }}>
+                      Mais do que projetos pontuais, buscamos relações duradouras, ajudando nossos clientes a
+                      crescer, evoluir sua presença digital e explorar novas oportunidades com segurança.
+                    </p>
+                  </div>
+                </div>
+
+                <p
+                  className="sobre-intro"
+                  style={{ fontSize: '1.1rem', maxWidth: '720px', margin: '2rem auto 0' }}
+                >
+                  A Prismarine nasceu com o propósito de conectar tecnologia e pessoas de forma simples,
+                  elegante e eficiente. Somos uma equipe apaixonada por experiências digitais e comprometida em
+                  transformar ideias em soluções reais para o dia a dia de nossos clientes.
+                </p>
+
+                <p
+                  className="sobre-texto"
+                  style={{ fontSize: '1.05rem', maxWidth: '720px', margin: '1rem auto 0' }}
+                >
+                  Nosso compromisso é estar sempre próximo, ouvindo, entendendo e construindo junto. É assim que
+                  a Prismarine se posiciona como um parceiro de confiança para quem quer dar o próximo passo no
+                  mundo digital com profissionalismo e consistência.
+                </p>
+              </div>
+            </div>
+
+            <div className="sobre-media">
+              {/* Espaço reservado para imagem institucional da empresa */}
+              <div className="sobre-media-placeholder" aria-hidden="true">
+                Espaço para imagem institucional
+              </div>
+            </div>
+          </div>
         </div>
 
         {selectedMember && (
