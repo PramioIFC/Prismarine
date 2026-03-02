@@ -147,8 +147,112 @@ export function BrunoPortfolio() {
 export function PramioPortfolio() {
   return (
     <div className="portfolio-content">
-      <h3>João Vitor Pramio</h3>
-      <h4>Estudante de Informática | Desenvolvedor em Aprendizado</h4>
+<h3>João Vitor Pramio</h3>
+      <h4>Líder Técnico & Desenvolvedor em aprendizado</h4>
+      <p className="portfolio-location">Concórdia, SC</p>
+
+      <section>
+        <h4>Sobre Mim</h4>
+        <p>
+          Estudante do 3° ano de <strong>Informática para Internet no IFC Campus Concórdia</strong>. 
+          Atuo como líder e desenvolvedor principal na <strong>Prismarine</strong>, onde uno a gestão 
+          estratégica de projetos ao desenvolvimento de softwares robustos. Tenho foco na entrega de 
+          soluções performáticas e inovadoras, com sólida experiência no ecossistema Python e JavaScript.
+        </p>
+      </section>
+
+      <section>
+        <h4>Tecnologias que utilizo</h4>
+        <ul>
+          <li>
+            <strong>Linguagens & Frameworks:</strong> Python (Django, Flask), JavaScript, React e TypeScript.
+          </li>
+          <li>
+            <strong>Banco de Dados:</strong> PostgreSQL.
+          </li>
+          <li>
+            <strong>Foco:</strong> Liderança técnica, arquitetura de sistemas, desenvolvimento Full Stack e soluções para o setor musical.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Projetos em Destaque</h4>
+
+        <h5>1. Prismarine (Liderança e Desenvolvimento)</h5>
+        <p>
+          Empresa de tecnologia voltada ao setor musical, onde atuo no núcleo técnico e estratégico.
+        </p>
+        <ul>
+          <li>
+            <strong>O Desafio:</strong> Criar uma ponte entre tecnologia de ponta e as necessidades do mercado fonográfico/musical.
+          </li>
+          <li>
+            <strong>Atuação:</strong> Gestão de equipe, definição de stack tecnológica e desenvolvimento de funcionalidades core.
+          </li>
+          <li>
+            <strong>Destaque:</strong> Uso de arquiteturas escaláveis para garantir a performance de softwares voltados à música.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Conquistas e Formação</h4>
+        <ul>
+          <li>
+            <strong>Ensino Médio Técnico:</strong> Informática para Internet - IFC Campus Concórdia (Em conclusão).
+          </li>
+          <li>
+            <strong>Liderança na Prismarine:</strong> Experiência prática em gestão de projetos, metodologias ágeis e desenvolvimento de produtos reais.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Habilidades Técnicas</h4>
+        <table className="portfolio-table">
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Tecnologias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Backend</td>
+              <td>Python, Django, Flask, PostgreSQL</td>
+            </tr>
+            <tr>
+              <td>Frontend</td>
+              <td>JavaScript, React, CSS3, HTML5</td>
+            </tr>
+            <tr>
+              <td>Gestão & Ferramentas</td>
+              <td>Liderança de Equipes, Git, GitHub, Planejamento Estratégico</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h4>Vamos conversar?</h4>
+        <ul>
+          <li>
+            <strong>GitHub:</strong>{' '}
+            <a
+              href="https://github.com/PramioIFC"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/PramioIFC
+            </a>
+          </li>
+          <li>
+            <strong>E-mail:</strong>{' '}
+            <a href="mailto:joaovitorp7777@gmail.com">joaovitorp7777@gmail.com</a>
+          </li>
+        </ul>
+      </section>
     </div>
   )
 }
