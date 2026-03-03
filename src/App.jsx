@@ -4,6 +4,14 @@ import brunoImg from './public/equipe/bruno.png'
 import lucasImg from './public/equipe/lucas.png'
 import joaoImg from './public/equipe/joao.png'
 import nataliaImg from './public/equipe/natalia.png'
+import consultoriaIcon from './public/equipe/servicosicon/Consultoria Web.png'
+import designIcon from './public/equipe/servicosicon/Design.png'
+import desenvolviIcon from './public/equipe/servicosicon/Desenvolvimento.png'
+import mobileIcon from './public/equipe/servicosicon/Aplicativos Mobile.png'
+import segurancaIcon from './public/equipe/servicosicon/Segurança.png'
+import analyticsIcon from './public/equipe/servicosicon/Analytics.png'
+import marketingIcon from './public/equipe/servicosicon/Marketing Digital.png'
+import suporteIcon from './public/equipe/servicosicon/Suporte 247.png'
 import { portfolios } from './portfolios'
 import { useState } from 'react'
 
@@ -11,14 +19,14 @@ function App() {
   const [selectedMember, setSelectedMember] = useState(null)
 
   const services = [
-    { icon: '💻', title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
-    { icon: '🎨', title: 'Design', desc: 'Interfaces modernas e intuitivas' },
-    { icon: '⚙️', title: 'Desenvolvimento', desc: 'Código limpo e eficiente' },
-    { icon: '📱', title: 'Aplicativos Mobile', desc: 'Apps responsivos e rápidos' },
-    { icon: '🔒', title: 'Segurança', desc: 'Proteção de dados garantida' },
-    { icon: '📊', title: 'Analytics', desc: 'Dados para decisões melhores' },
-    { icon: '📈', title: 'Marketing Digital', desc: 'Campanhas eficazes e SEO' },
-    { icon: '🛠️', title: 'Suporte 24/7', desc: 'Atendimento contínuo para sua empresa' }
+    { icon: consultoriaIcon, title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
+    { icon: designIcon, title: 'Design', desc: 'Interfaces modernas e intuitivas' },
+    { icon: desenvolviIcon, title: 'Desenvolvimento', desc: 'Código limpo e eficiente' },
+    { icon: mobileIcon, title: 'Aplicativos Mobile', desc: 'Apps responsivos e rápidos' },
+    { icon: segurancaIcon, title: 'Segurança', desc: 'Proteção de dados garantida' },
+    { icon: analyticsIcon, title: 'Analytics', desc: 'Dados para decisões melhores' },
+    { icon: marketingIcon, title: 'Marketing Digital', desc: 'Campanhas eficazes e SEO' },
+    { icon: suporteIcon, title: 'Suporte 24/7', desc: 'Atendimento contínuo para sua empresa' }
   ]
 
   const teamMembers = [
@@ -142,7 +150,7 @@ function App() {
           <div className="servicos-grid">
             {services.map((card, index) => (
               <div key={index} className="servico-card">
-                <div className="servico-icon">{card.icon}</div>
+                <div className="servico-icon"><img src={card.icon} alt={card.title} /></div>
                 <h3>{card.title}</h3>
                 <p>{card.desc}</p>
               </div>
