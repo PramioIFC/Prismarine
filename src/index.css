@@ -809,6 +809,22 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: var(--header-height-tablet);
   }
 
+  /* make objetivos stack nicely on intermediate screens */
+  .objetivos-content {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .objetivos-grid,
+  .servicos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .objetivo-card {
+    padding: 1.25rem;
+  }
+
   .hero {
     min-height: 100vh;
   }
@@ -889,6 +905,63 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Header toggle (hamburger) and mobile nav behaviour */
+.header-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--text-dark);
+  font-size: 1.35rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.header-toggle-icon {
+  display: inline-block;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .header-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: var(--header-height-mobile);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: rgba(202, 219, 216, 0.98);
+    padding: 0.6rem 0.75rem;
+    z-index: 900;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+
+  .header-nav a {
+    color: var(--text-dark);
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    display: block;
+    text-align: left;
+  }
+
+  /* increase logo size slightly on mobile per request */
+  #header-logo {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 @media (max-width: 480px) {
   .section {
     padding: 2rem 1rem;
@@ -923,8 +996,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #header-logo {
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
   }
 
   .header-nav {

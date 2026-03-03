@@ -17,6 +17,7 @@ import { useState } from 'react'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState(null)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   const services = [
     { icon: consultoriaIcon, title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
@@ -41,12 +42,23 @@ function App() {
     <div className="layout">
       <header className="header" role="banner">
         <img id="header-logo" src={prismarinelogo} alt="Logo Prismarine" />
-        <nav className="header-nav" role="navigation" aria-label="Navegação principal">
-          <a href="#inicio">Início</a>
-          <a href="#objetivos">Objetivos</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#equipe">Equipe</a>
-          <a href="#sobre">Sobre Nós</a>
+
+        <button
+          className="header-toggle"
+          aria-label={mobileNavOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={mobileNavOpen}
+          onClick={() => setMobileNavOpen((v) => !v)}
+          type="button"
+        >
+          <span aria-hidden="true" className="header-toggle-icon">{mobileNavOpen ? '✕' : '☰'}</span>
+        </button>
+
+        <nav className={`header-nav ${mobileNavOpen ? 'open' : ''}`} role="navigation" aria-label="Navegação principal">
+          <a href="#inicio" onClick={() => setMobileNavOpen(false)}>Início</a>
+          <a href="#objetivos" onClick={() => setMobileNavOpen(false)}>Objetivos</a>
+          <a href="#servicos" onClick={() => setMobileNavOpen(false)}>Serviços</a>
+          <a href="#equipe" onClick={() => setMobileNavOpen(false)}>Equipe</a>
+          <a href="#sobre" onClick={() => setMobileNavOpen(false)}>Sobre Nós</a>
         </nav>
       </header>
 
