@@ -766,7 +766,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Responsive breakpoints */
 @media (max-width: 992px) {
   .section {
     min-height: auto;
@@ -774,7 +773,6 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
   }
 
-  /* tablet header adjustments: keep header fixed but compact, prevent nav wrapping */
   .header {
     position: fixed;
     top: 0;
@@ -804,12 +802,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.95rem;
   }
 
-  /* ensure content is pushed below the fixed header on tablets */
   .app {
     margin-top: var(--header-height-tablet);
   }
 
-  /* make objetivos stack nicely on intermediate screens */
   .objetivos-content {
     padding: 0 1rem;
     text-align: center;
@@ -849,7 +845,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .header {
-    /* keep header fixed on tablets but compact */
     position: fixed;
     top: 0;
     left: 0;
@@ -861,7 +856,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header-nav {
-    /* horizontal, horizontally-scrollable nav to avoid wrapping/height growth */
+
     width: 100%;
     flex-direction: row;
     gap: 0.5rem;
@@ -882,7 +877,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0.75rem;
   }
 
-  /* ensure content is pushed below the fixed header */
   .app {
     margin-top: var(--header-height-mobile);
   }
@@ -895,7 +889,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 1.5rem;
   }
 
-  /* tablet adjustments for the services grid */
   .servicos-grid {
     gap: 1rem;
   }
@@ -905,7 +898,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Header toggle (hamburger) and mobile nav behaviour */
 .header-toggle {
   display: none;
   background: transparent;
@@ -955,7 +947,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
   }
 
-  /* increase logo size slightly on mobile per request */
   #header-logo {
     width: 64px;
     height: 64px;
@@ -981,7 +972,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Specific tweaks for small phones (e.g. iPhone 14 Pro, ~393px CSS width) */
 @media (max-width: 420px) {
   .header {
     position: fixed;
@@ -1073,7 +1063,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.95rem;
   }
 
-  /* Modal adjustments for small screens */
   .portfolio-modal-backdrop {
     padding: 0.65rem;
   }
@@ -1129,7 +1118,6 @@ h1, h2, h3, h4, h5, h6 {
   .servicos-intro {
     font-size: 1rem;
   }
-  /* ensure content is pushed below the fixed small header */
   .app {
     margin-top: var(--header-height-mobile-small);
   }
