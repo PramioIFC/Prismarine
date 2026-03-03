@@ -36,6 +36,11 @@
   --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.4);
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  /* mobile header overrides */
+  --header-height-mobile: 64px;
+  --header-height-mobile-small: 56px;
+  --header-logo-size-mobile: 3.5rem;
+  --header-height-tablet: 72px;
 }
 
 html {
@@ -769,6 +774,41 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
   }
 
+  /* tablet header adjustments: keep header fixed but compact, prevent nav wrapping */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height-tablet);
+    padding: 0.35rem 1rem;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    justify-content: flex-end;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.15rem;
+    margin-left: 0.5rem;
+  }
+
+  .header-nav a {
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+
+  /* ensure content is pushed below the fixed header on tablets */
+  .app {
+    margin-top: var(--header-height-tablet);
+  }
+
   .hero {
     min-height: 100vh;
   }
@@ -793,33 +833,42 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .header {
-    position: static;       /* evita sobrepor o conteúdo no mobile */
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    height: auto;
-    justify-content: center;
+    /* keep header fixed on tablets but compact */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height-mobile);
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    justify-content: space-between;
   }
 
   .header-nav {
+    /* horizontal, horizontally-scrollable nav to avoid wrapping/height growth */
     width: 100%;
-    flex-direction: column;
-    gap: 0.25rem;
-    justify-content: center;
-    margin-left: 0;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-end;
     align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.15rem;
   }
 
   .header-nav a {
-    padding: 0.25rem 0;
-    font-size: 0.9rem;
+    padding: 0.18rem 0.25rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
   }
 
   .footer p {
     padding: 0 0.75rem;
   }
 
+  /* ensure content is pushed below the fixed header */
   .app {
-    margin-top: 0;          /* já que o header não é mais fixo */
+    margin-top: var(--header-height-mobile);
   }
 
   .section {
@@ -856,6 +905,160 @@ h1, h2, h3, h4, h5, h6 {
   .footer {
     padding-top: 1rem;
     padding-bottom: 1.25rem;
+  }
+}
+
+/* Specific tweaks for small phones (e.g. iPhone 14 Pro, ~393px CSS width) */
+@media (max-width: 420px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height-mobile-small);
+    padding: 0.25rem 0.6rem;
+    gap: 0.45rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #header-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header-nav {
+    width: auto;
+    flex-direction: row;
+    gap: 0.45rem;
+    align-items: center;
+    margin-left: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header-nav a {
+    font-size: 0.82rem;
+    padding: 0.18rem 0.25rem;
+    white-space: nowrap;
+  }
+
+  #prismarineFrase {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    padding: 0.35rem 0.8rem;
+    line-height: 1.06;
+  }
+
+  .section {
+    padding: 1.1rem 0.6rem;
+  }
+
+  .servicos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .servico-card {
+    padding: 0.9rem 0.85rem;
+  }
+
+  .servico-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .servico-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .equipe-content {
+    padding: 0 0.4rem;
+  }
+
+  .equipe-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .equipe-card {
+    padding: 0.9rem;
+    gap: 0.9rem;
+  }
+
+  .equipe-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .equipe-nome {
+    font-size: 1rem;
+  }
+
+  .equipe-cargo {
+    font-size: 0.95rem;
+  }
+
+  /* Modal adjustments for small screens */
+  .portfolio-modal-backdrop {
+    padding: 0.65rem;
+  }
+
+  .portfolio-modal {
+    max-width: 420px;
+    width: calc(100% - 1.2rem);
+    padding: 1rem 0.95rem;
+    border-radius: 16px;
+    max-height: 88vh;
+  }
+
+  .portfolio-close {
+    width: 34px;
+    height: 34px;
+    top: 0.6rem;
+    right: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .portfolio-header {
+    gap: 0.85rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .portfolio-header-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .portfolio-header-nome {
+    font-size: 1.25rem;
+  }
+
+  .portfolio-header-cargo {
+    font-size: 0.98rem;
+  }
+
+  .portfolio-body {
+    padding-right: 0;
+    margin-top: 0.4rem;
+  }
+
+  .footer {
+    font-size: 0.95rem;
+    padding: 0.8rem 0.75rem;
+  }
+
+  .app p {
+    font-size: 1rem;
+  }
+
+  .servicos-intro {
+    font-size: 1rem;
+  }
+  /* ensure content is pushed below the fixed small header */
+  .app {
+    margin-top: var(--header-height-mobile-small);
   }
 }
 
