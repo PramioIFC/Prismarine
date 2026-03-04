@@ -27,7 +27,7 @@ function App() {
     { icon: segurancaIcon, title: 'Segurança', desc: 'Proteção de dados garantida' },
     { icon: analyticsIcon, title: 'Analytics', desc: 'Dados para decisões melhores' },
     { icon: marketingIcon, title: 'Marketing Digital', desc: 'Campanhas eficazes e SEO' },
-    { icon: suporteIcon, title: 'Suporte', desc: 'Atendimento contínuo para sua empresa' }
+    { icon: suporteIcon, title: 'Suporte', desc: 'Atendimento para sua empresa' }
   ]
 
   const teamMembers = [
