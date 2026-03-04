@@ -313,7 +313,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Prismarine. Juntos pelo prismarino</p>
+        <p>© {new Date().getFullYear()} 2026 Prismarine Software e Sistemas LTDA. Todos os direitos reservados.</p>
       </footer>
     </div>
   )
