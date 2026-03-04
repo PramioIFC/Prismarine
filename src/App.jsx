@@ -151,6 +151,26 @@ function App() {
           </div>
         </div>
 
+        <div id="flux" className="section produto" role="region" aria-labelledby="flux-title">
+          <h2 id="flux-title"><span className="flux-name">Flux</span></h2>
+          <p className="produto-intro">
+            Flux é a nossa plataforma de áudio — um espaço para ouvir música, descobrir podcasts e montar
+            playlists com recomendações personalizadas. Ideal para quem vive de som ou simplesmente ama ouvir.
+          </p>
+          <div className="produto-grid">
+            <div className="produto-card">
+              <h3>O que oferece</h3>
+              <ul>
+                <li>Música sob demanda e playlists</li>
+                <li>Podcasts e programas exclusivos</li>
+                <li>Recomendações personalizadas</li>
+                <li>Modo offline e integração com dispositivos</li>
+              </ul>
+              <a className="flux-cta" href="/flux" title="Ir para a página do Flux">Ir para Flux</a>
+            </div>
+          </div>
+        </div>
+
         <div id="servicos" className="section servicos" role="region" aria-labelledby="servicos-title">
           <h2 id="servicos-title">Serviços</h2>
           <p className="servicos-intro">
@@ -262,6 +282,20 @@ function App() {
           </div>
         </div>
 
+        <div id="contato" className="section contato" role="region" aria-labelledby="contato-title">
+          <div className="contato-content" style={{ textAlign: 'center' }}>
+            <h2 id="contato-title">Contato</h2>
+            <p className="contato-intro">
+              Entre em contato para parcerias, dúvidas ou demonstrações do Flux. Estamos disponíveis por
+              e-mail e redes sociais.
+            </p>
+            <p style={{ marginTop: '1rem' }}>
+              <a href="mailto:contato@prismarine.com">contato@prismarine.com</a> · <a href="tel:+551199999999">(11)
+              99999-9999</a>
+            </p>
+          </div>
+        </div>
+
         {selectedMember && (
           <div
             className="portfolio-modal-backdrop"
@@ -313,7 +347,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>© {new Date().getFullYear()} 2026 Prismarine Software e Sistemas LTDA. Todos os direitos reservados.</p>
+        <p>© {new Date().getFullYear()} Prismarine Software e Sistemas LTDA. Todos os direitos reservados.</p>
       </footer>
     </div>
   )

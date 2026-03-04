@@ -343,6 +343,76 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(115, 201, 207, 0.15);
+
+/* ===== SEÇÃO FLUX (PRODUTO) ===== */
+.produto {
+  background: linear-gradient(180deg, rgba(11,34,31,0.95) 0%, rgba(18,115,105,0.04) 50%, rgba(11,34,31,0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem clamp(1rem, 4vw, 2rem);
+}
+
+.flux-name {
+  color: var(--prismarine-accent);
+  font-weight: 800;
+  text-shadow: 0 2px 18px rgba(115,201,207,0.25);
+}
+
+.produto-intro {
+  max-width: 820px;
+  color: var(--text-muted);
+  margin: 0.75rem auto 1.5rem;
+  font-size: 1.05rem;
+}
+
+.produto-grid {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: center;
+}
+
+.produto-card {
+  background: rgba(255,255,255,0.96);
+  color: var(--text-dark);
+  padding: 1.8rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(115,201,207,0.12);
+  text-align: left;
+  max-width: 520px;
+}
+
+.produto-card h3 {
+  margin-top: 0;
+  color: var(--text-dark);
+}
+
+.produto-card ul {
+  margin: 0.6rem 0 1rem 1.15rem;
+  color: var(--text-dark-muted);
+}
+
+.flux-cta {
+  display: inline-block;
+  background: var(--prismarine-accent);
+  color: #062524;
+  padding: 0.55rem 0.95rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.flux-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+
+/* ===== SEÇÃO CONTATO ===== */
+.contato { background: linear-gradient(180deg, var(--prismarine-bg) 0%, rgba(10,46,42,0.96) 100%); padding: 3rem clamp(1rem,4vw,2rem); }
+.contato h2 { color: var(--prismarine-accent); margin-bottom: 0.5rem; }
+.contato-intro { color: var(--text-muted); max-width: 800px; margin: 0 auto 1rem; }
+.contato a { color: var(--prismarine-accent); text-decoration: none; font-weight: 600; }
+
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
   cursor: pointer;
 }
