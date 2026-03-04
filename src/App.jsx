@@ -56,8 +56,8 @@ function App() {
         <nav className={`header-nav ${mobileNavOpen ? 'open' : ''}`} role="navigation" aria-label="Navegação principal">
           <a href="#inicio" onClick={() => setMobileNavOpen(false)}>Início</a>
           <a href="#objetivos" onClick={() => setMobileNavOpen(false)}>Objetivos</a>
-          <a href="#servicos" onClick={() => setMobileNavOpen(false)}>Serviços</a>
           <a href="#flux" onClick={() => setMobileNavOpen(false)}>Flux</a>
+          <a href="#servicos" onClick={() => setMobileNavOpen(false)}>Serviços</a>
           <a href="#equipe" onClick={() => setMobileNavOpen(false)}>Equipe</a>
           <a href="#sobre" onClick={() => setMobileNavOpen(false)}>Sobre Nós</a>
           <a href="#contato" onClick={() => setMobileNavOpen(false)}>Contato</a>
