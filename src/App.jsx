@@ -18,6 +18,8 @@ import { useState } from 'react'
 function App() {
   const [selectedMember, setSelectedMember] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const services = [
     { icon: consultoriaIcon, title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
@@ -37,6 +39,26 @@ function App() {
     { name: 'João Pedro', role: 'Desenvolvedor', photo: joaoImg },
     { name: 'Natália Martins', role: 'Desenvolvedor', photo: nataliaImg }
   ]
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Validação básica
+    if (formData.name.trim() && formData.email.trim() && formData.message.trim()) {
+      // Aqui você pode adicionar lógica real de envio de e-mail
+      console.log('Formulário enviado:', formData)
+      setIsSubmitted(true)
+    }
+  }
+
+  const handleNewMessage = () => {
+    setFormData({ name: '', email: '', message: '' })
+    setIsSubmitted(false)
+  }
 
   return (
     <div className="layout">
@@ -390,16 +412,73 @@ function App() {
         </div>
 
         <div id="contato" className="section contato" role="region" aria-labelledby="contato-title">
-          <div className="contato-content" style={{ textAlign: 'center' }}>
-            <h2 id="contato-title">Contato</h2>
-            <p className="contato-intro">
-              Entre em contato para parcerias, dúvidas ou demonstrações do Flux. Estamos disponíveis por
-              e-mail e redes sociais.
-            </p>
-            <p style={{ marginTop: '1rem' }}>
-              <a href="mailto:contato@prismarine.com">contato@prismarine.com</a> · <a href="tel:+551199999999">(11)
-              99999-9999</a>
-            </p>
+          <div className="contato-wrapper">
+            <div className="contato-left">
+              <h2 id="contato-title">Contato</h2>
+              <p className="contato-intro">
+                Entre em contato para parcerias, dúvidas ou demonstrações do Flux. Estamos disponíveis para ouvir você.
+              </p>
+            </div>
+
+            <div className="contato-right">
+              {!isSubmitted ? (
+                <form className="contato-card" onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="name">Nome</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Seu nome"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="seu@email.com"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="message">Mensagem</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Sua mensagem aqui..."
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+
+                  <button type="submit" className="contato-button">
+                    Enviar Mensagem
+                  </button>
+                </form>
+              ) : (
+                <div className="contato-success-card">
+                  <div className="success-icon">✓</div>
+                  <h3>Mensagem enviada com sucesso!</h3>
+                  <p>Obrigado por entrar em contato. Retornaremos em breve.</p>
+                  <button type="button" className="contato-button" onClick={handleNewMessage}>
+                    Enviar Outra Mensagem
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
