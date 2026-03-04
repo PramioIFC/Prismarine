@@ -113,11 +113,10 @@ function App() {
                 >
                   FOCO NA EXPERIÊNCIA
                 </div>
-                <h3 style={{ fontSize: '1.25rem' }}>Jornada simples e intuitiva</h3>
+                <h3 style={{ fontSize: '1.25rem' }}>Navagação simples e intuitiva</h3>
                 <p style={{ fontSize: '1rem' }}>
                   Criar uma experiência leve e agradável para descobrir músicas, montar playlists e encontrar
-                  equipamentos de áudio. Tudo com navegação clara, visual organizado e passos simples, tanto no
-                  app quanto na loja de produtos.
+                  equipamentos de áudio.
                 </p>
               </div>
 
@@ -131,8 +130,7 @@ function App() {
                 <h3 style={{ fontSize: '1.25rem' }}>Valor em cada solução</h3>
                 <p style={{ fontSize: '1rem' }}>
                   Entregar soluções que realmente façam diferença no dia a dia: software de streaming, venda de
-                  caixas de som e equipamentos de áudio, além de serviços como segurança de rede e análise de
-                  dados para projetos musicais e ambientes acadêmicos.
+                  caixas de som e equipamentos de áudio, além de serviços a parte.
                 </p>
               </div>
 
@@ -146,8 +144,7 @@ function App() {
                 <h3 style={{ fontSize: '1.25rem' }}>Relacionamento de longo prazo</h3>
                 <p style={{ fontSize: '1rem' }}>
                   Construir uma relação sólida, transparente e próxima, acompanhando a evolução de artistas,
-                  produtores, instituições e empresas que confiam na Prismarine para cuidar da parte tecnológica
-                  e da infraestrutura ligada à música.
+                  produtores, instituições e empresas que confiam na Prismarine.
                 </p>
               </div>
             </div>
