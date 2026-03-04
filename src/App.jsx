@@ -18,6 +18,25 @@ import { useState } from 'react'
 function App() {
   const [selectedMember, setSelectedMember] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    mensagem: ''
+  })
+  const [formSubmitted, setFormSubmitted] = useState(false)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setFormSubmitted(true)
+  }
 
   const services = [
     { icon: consultoriaIcon, title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
@@ -390,16 +409,82 @@ function App() {
         </div>
 
         <div id="contato" className="section contato" role="region" aria-labelledby="contato-title">
-          <div className="contato-content" style={{ textAlign: 'center' }}>
-            <h2 id="contato-title">Contato</h2>
-            <p className="contato-intro">
-              Entre em contato para parcerias, dúvidas ou demonstrações do Flux. Estamos disponíveis por
-              e-mail e redes sociais.
-            </p>
-            <p style={{ marginTop: '1rem' }}>
-              <a href="mailto:contato@prismarine.com">contato@prismarine.com</a> · <a href="tel:+551199999999">(11)
-              99999-9999</a>
-            </p>
+          <div className="contato-content">
+            <div className="contato-header">
+              <h2 id="contato-title">Contato</h2>
+              <p className="contato-intro">
+                Entre em contato para parcerias, dúvidas ou demonstrações do Flux. Preencha o formulário e retornaremos
+                em breve.
+              </p>
+            </div>
+
+            <div
+              className={`contato-card servico-card ${formSubmitted ? 'contato-card-success' : ''}`}
+              aria-live="polite"
+            >
+              {!formSubmitted ? (
+                <form className="contato-form" onSubmit={handleSubmit}>
+                  <div className="contato-field">
+                    <label className="contato-label" htmlFor="contato-nome">
+                      Nome
+                    </label>
+                    <input
+                      id="contato-nome"
+                      name="nome"
+                      type="text"
+                      className="contato-input"
+                      value={formData.nome}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="contato-field">
+                    <label className="contato-label" htmlFor="contato-email">
+                      Email
+                    </label>
+                    <input
+                      id="contato-email"
+                      name="email"
+                      type="email"
+                      className="contato-input"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="contato-field">
+                    <label className="contato-label" htmlFor="contato-mensagem">
+                      Mensagem
+                    </label>
+                    <textarea
+                      id="contato-mensagem"
+                      name="mensagem"
+                      className="contato-textarea"
+                      rows="4"
+                      value={formData.mensagem}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" className="contato-button">
+                    Enviar mensagem
+                  </button>
+                </form>
+              ) : (
+                <div className="contato-success">
+                  <div className="contato-success-icon" aria-hidden="true">
+                    ✓
+                  </div>
+                  <h3 className="contato-success-title">Mensagem enviada com sucesso</h3>
+                  <p className="contato-success-text">
+                    Recebemos sua mensagem e em breve entraremos em contato com você.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 

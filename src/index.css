@@ -441,10 +441,178 @@ h1, h2, h3, h4, h5, h6 {
 .flux-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
 
 /* ===== SEÇÃO CONTATO ===== */
-.contato { background: linear-gradient(180deg, var(--prismarine-bg) 0%, rgba(10,46,42,0.96) 100%); padding: 3rem clamp(1rem,4vw,2rem); }
-.contato h2 { color: var(--prismarine-accent); margin-bottom: 0.5rem; }
-.contato-intro { color: var(--text-muted); max-width: 800px; margin: 0 auto 1rem; }
-.contato a { color: var(--prismarine-accent); text-decoration: none; font-weight: 600; }
+.contato {
+  background: linear-gradient(180deg, var(--prismarine-bg) 0%, rgba(10,46,42,0.96) 100%);
+  padding: 3.5rem clamp(1rem, 4vw, 2.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contato-content {
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+}
+
+.contato-header h2 {
+  color: var(--prismarine-accent);
+  margin-bottom: 0.5rem;
+}
+
+.contato-intro {
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  font-size: 1.02rem;
+}
+
+.contato-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contato-field {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contato-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.contato-input,
+.contato-textarea {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(115, 201, 207, 0.25);
+  padding: 0.65rem 0.75rem;
+  font-family: "Outfit", "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.contato-input::placeholder,
+.contato-textarea::placeholder {
+  color: rgba(16, 42, 67, 0.6);
+}
+
+.contato-input:focus,
+.contato-textarea:focus {
+  border-color: var(--prismarine-accent);
+  box-shadow: 0 0 0 2px rgba(115, 201, 207, 0.25), 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  background-color: #ffffff;
+}
+
+.contato-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contato-button {
+  margin-top: 0.5rem;
+  align-self: center;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.8rem;
+  font-family: "Outfit", "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  background: linear-gradient(135deg, var(--prismarine-light), var(--prismarine-accent));
+  color: var(--text-dark);
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(115, 201, 207, 0.45);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), filter var(--transition-fast);
+}
+
+.contato-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  filter: brightness(1.03);
+}
+
+.contato-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.contato-button:focus-visible {
+  outline: 2px solid var(--prismarine-accent);
+  outline-offset: 3px;
+}
+
+.contato-success {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: contato-fade-slide 0.35s ease-out both;
+}
+
+.contato-success-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(115, 201, 207, 0.15);
+  border: 1px solid var(--prismarine-accent);
+  color: var(--prismarine-accent);
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: 0 0 20px rgba(115, 201, 207, 0.4);
+}
+
+.contato-success-title {
+  font-size: 1.25rem;
+  color: var(--prismarine-pale);
+}
+
+.contato-success-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.contato a {
+  color: var(--prismarine-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contato-card-success {
+  animation: contato-fade-slide 0.35s ease-out both;
+}
+
+@keyframes contato-fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .servico-card:hover {
   transform: translateY(-8px);
