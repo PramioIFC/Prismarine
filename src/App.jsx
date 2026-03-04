@@ -23,7 +23,7 @@ function App() {
     { icon: consultoriaIcon, title: 'Consultoria Web', desc: 'Soluções personalizadas para sua presença digital' },
     { icon: designIcon, title: 'Design', desc: 'Interfaces modernas e intuitivas' },
     { icon: desenvolviIcon, title: 'Desenvolvimento', desc: 'Código limpo e eficiente' },
-    { icon: mobileIcon, title: 'Aplicativos Mobile', desc: 'Apps responsivos e rápidos' },
+    { icon: mobileIcon, title: 'Responsividade', desc: 'Apps responsivos e rápidos' },
     { icon: segurancaIcon, title: 'Segurança', desc: 'Proteção de dados garantida' },
     { icon: analyticsIcon, title: 'Analytics', desc: 'Dados para decisões melhores' },
     { icon: marketingIcon, title: 'Marketing Digital', desc: 'Campanhas eficazes e SEO' },
