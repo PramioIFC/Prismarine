@@ -886,7 +886,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .section.hero {
-    padding-top: 1.5rem;
+    /* remove extra top gap on small screens so hero content fills area */
+    padding-top: 0;
+    padding-bottom: 1rem;
+    min-height: calc(100vh - var(--header-height-mobile));
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .servicos-grid {
@@ -960,6 +966,11 @@ h1, h2, h3, h4, h5, h6 {
 
   #prismarineFrase {
     font-size: clamp(2.5rem, 9vw, 3rem);
+    /* make the phrase span the full hero area without gaps */
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    display: block;
   }
 
   .servico-card {
@@ -1008,7 +1019,9 @@ h1, h2, h3, h4, h5, h6 {
 
   #prismarineFrase {
     font-size: clamp(1.9rem, 8vw, 2.6rem);
-    padding: 0.35rem 0.8rem;
+    padding: 0;
+    width: 100%;
+    text-align: center;
     line-height: 1.06;
   }
 
