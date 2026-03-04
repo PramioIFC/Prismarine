@@ -27,11 +27,11 @@ function App() {
     { icon: segurancaIcon, title: 'Segurança', desc: 'Proteção de dados garantida' },
     { icon: analyticsIcon, title: 'Analytics', desc: 'Dados para decisões melhores' },
     { icon: marketingIcon, title: 'Marketing Digital', desc: 'Campanhas eficazes e SEO' },
-    { icon: suporteIcon, title: 'Suporte 24/7', desc: 'Atendimento contínuo para sua empresa' }
+    { icon: suporteIcon, title: 'Suporte', desc: 'Atendimento contínuo para sua empresa' }
   ]
 
   const teamMembers = [
-    { name: 'João Pramio', role: 'Líder', photo: pramioImg },
+    { name: 'João Pramio', role: 'Gerente', photo: pramioImg },
     { name: 'Bruno Gelain', role: 'Desenvolvedor', photo: brunoImg },
     { name: 'Lucas Weber', role: 'Desenvolvedor', photo: lucasImg },
     { name: 'João Pedro', role: 'Desenvolvedor', photo: joaoImg },
