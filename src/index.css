@@ -337,14 +337,47 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .servico-card {
-  background: rgba(173, 214, 203, 0.96);
+  background: var(--prismarine-card);
   border-radius: var(--radius-md);
   padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(115, 201, 207, 0.15);
+  border: 1px solid var(--prismarine-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
 
-/* ===== SEÇÃO FLUX (PRODUTO) ===== */
+.servico-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(115, 201, 207, 0.08) 0%,
+    rgba(45, 155, 143, 0.08) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.servico-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(115, 201, 207, 0.15),
+              0 0 40px rgba(45, 155, 143, 0.1);
+  z-index: 2;
+}
 .produto {
   background: linear-gradient(180deg, rgba(11,34,31,0.95) 0%, rgba(18,115,105,0.04) 50%, rgba(11,34,31,0.98) 100%);
   display: flex;
@@ -408,234 +441,23 @@ h1, h2, h3, h4, h5, h6 {
 .flux-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
 
 /* ===== SEÇÃO CONTATO ===== */
-.contato {
-  background: linear-gradient(180deg, var(--prismarine-bg) 0%, rgba(18, 115, 105, 0.08) 50%, var(--prismarine-bg) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem clamp(1rem, 4vw, 2rem);
-}
-
-.contato-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  width: 100%;
-  max-width: 1300px;
-  align-items: flex-start;
-}
-
-.contato-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-top: 0.5rem;
-}
-
-.contato-left h2 {
-  margin: 0;
-  color: var(--prismarine-accent);
-  text-shadow: 0 2px 16px rgba(115, 201, 207, 0.3);
-  font-weight: 800;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.contato-intro {
-  color: var(--text-muted);
-  font-size: clamp(1.05rem, 2vw, 1.15rem);
-  line-height: 1.8;
-  margin: 0;
-  font-weight: 400;
-}
-
-.contato-right {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Card do formulário */
-.contato-card {
-  background: linear-gradient(135deg, rgba(173, 214, 203, 0.98) 0%, rgba(157, 207, 201, 0.95) 100%);
-  border-radius: var(--radius-lg);
-  padding: 2.8rem;
-  box-shadow: 0 16px 48px rgba(10, 46, 42, 0.2);
-  border: 1px solid rgba(115, 201, 207, 0.25);
-  width: 100%;
-  max-width: 520px;
-  transition: all var(--transition-smooth);
-  backdrop-filter: blur(10px);
-}
-
-.contato-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 24px 64px rgba(115, 201, 207, 0.15);
-  border-color: rgba(115, 201, 207, 0.4);
-}
-
-/* Form Groups */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-.form-group:last-of-type {
-  margin-bottom: 2.2rem;
-}
-
-.form-group label {
-  color: var(--text-dark-muted);
-  font-weight: 700;
-  margin-bottom: 0.7rem;
-  font-size: 0.95rem;
-  font-family: "Outfit", "Montserrat", sans-serif;
-  text-transform: capitalize;
-  letter-spacing: 0.4px;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 1rem 1.2rem;
-  border: 2px solid rgba(16, 42, 67, 0.15);
-  border-radius: var(--radius-md);
-  font-family: "Outfit", "Montserrat", sans-serif;
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  background: rgba(255, 255, 255, 0.95);
-  transition: all var(--transition-fast);
-  resize: none;
-  line-height: 1.6;
-}
-
-.form-group textarea {
-  min-height: 140px;
-  font-size: 0.95rem;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: rgba(51, 78, 104, 0.65);
-  font-style: italic;
-  font-weight: 400;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--prismarine-accent);
-  box-shadow: inset 0 0 0 1px rgba(115, 201, 207, 0.4), 0 0 0 3px rgba(115, 201, 207, 0.15);
-  background: rgba(255, 255, 255, 0.99);
-}
-
-/* Botão */
-.contato-button {
-  width: 100%;
-  padding: 1.1rem 1.8rem;
-  background: linear-gradient(135deg, var(--prismarine-accent) 0%, #5db5ba 100%);
-  color: #062524;
-  border: none;
-  border-radius: var(--radius-md);
-  font-weight: 800;
-  font-size: 0.95rem;
-  font-family: "Outfit", "Montserrat", sans-serif;
-  cursor: pointer;
-  transition: all var(--transition-smooth);
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  box-shadow: 0 8px 20px rgba(115, 201, 207, 0.25);
-}
-
-.contato-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(115, 201, 207, 0.35);
-}
-
-.contato-button:active {
-  transform: translateY(-2px);
-}
-
-/* Mensagem de Sucesso */
-.contato-success-card {
-  background: linear-gradient(135deg, rgba(173, 214, 203, 0.98) 0%, rgba(157, 207, 201, 0.95) 100%);
-  border-radius: var(--radius-lg);
-  padding: 3rem 2.8rem;
-  box-shadow: 0 16px 48px rgba(10, 46, 42, 0.2);
-  border: 1px solid rgba(115, 201, 207, 0.25);
-  width: 100%;
-  max-width: 520px;
-  text-align: center;
-  animation: slideUp 0.5s cubic-bezier(0.34, 1.26, 0.64, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.success-icon {
-  width: 5rem;
-  height: 5rem;
-  background: linear-gradient(135deg, var(--prismarine-accent) 0%, #5db5ba 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  color: #062524;
-  font-weight: bold;
-  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 12px 32px rgba(115, 201, 207, 0.3);
-}
-
-.contato-success-card h3 {
-  color: var(--text-dark);
-  font-size: 1.5rem;
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.contato-success-card p {
-  color: var(--text-dark-muted);
-  font-size: 1.05rem;
-  margin: 0;
-  line-height: 1.7;
-  font-weight: 500;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
-  cursor: pointer;
-}
+.contato { background: linear-gradient(180deg, var(--prismarine-bg) 0%, rgba(10,46,42,0.96) 100%); padding: 3rem clamp(1rem,4vw,2rem); }
+.contato h2 { color: var(--prismarine-accent); margin-bottom: 0.5rem; }
+.contato-intro { color: var(--text-muted); max-width: 800px; margin: 0 auto 1rem; }
+.contato a { color: var(--prismarine-accent); text-decoration: none; font-weight: 600; }
 
 .servico-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: rgba(115, 201, 207, 0.35);
+  box-shadow: 0 20px 60px rgba(115, 201, 207, 0.2);
+  border-color: var(--prismarine-accent);
+}
+
+.servico-card:hover::before {
+  opacity: 1;
+}
+
+.servico-card:hover::after {
+  opacity: 1;
 }
 
 .servico-icon {
@@ -651,23 +473,27 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(0) saturate(0%);
+  filter: brightness(0) saturate(0%) invert(0.8) sepia(0.6) saturate(1.5) hue-rotate(160deg);
 }
 
 .servico-card h3 {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  color: var(--text-dark);
+  color: var(--prismarine-pale);
   margin-bottom: 0.5rem;
   font-weight: 600;
   font-family: "Outfit", "Montserrat", sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 .servico-card p {
   font-size: 1.05rem;
-  color: var(--text-dark-muted);
+  color: var(--text-muted);
   line-height: 1.55;
   margin: 0;
   font-family: "Outfit", "Montserrat", sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 /* ===== SEÇÃO OBJETIVOS ===== */
@@ -693,30 +519,80 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .objetivo-card {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(115, 201, 207, 0.15);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  background: var(--prismarine-card);
+  border: 1px solid var(--prismarine-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.objetivo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(115, 201, 207, 0.08) 0%,
+    rgba(45, 155, 143, 0.08) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.objetivo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(115, 201, 207, 0.15),
+              0 0 40px rgba(45, 155, 143, 0.1);
+  z-index: 2;
 }
 
 .objetivo-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(115, 201, 207, 0.2);
+  border-color: var(--prismarine-accent);
+}
+
+.objetivo-card:hover::before {
+  opacity: 1;
+}
+
+.objetivo-card:hover::after {
+  opacity: 1;
 }
 
 .objetivo-etiqueta {
-  color: var(--prismarine-mid);
+  color: var(--prismarine-accent);
   font-weight: 600;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 .objetivo-card h3 {
-  color: var(--text-dark);
+  color: var(--prismarine-pale);
   font-family: "Outfit", "Montserrat", sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 .objetivo-card p {
-  color: var(--text-dark-muted);
+  color: var(--text-muted);
   font-family: "Outfit", "Montserrat", sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 .objetivos-intro,
@@ -729,20 +605,81 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(180deg, var(--prismarine-bg) 0%, rgba(10, 46, 42, 0.98) 100%);
 }
 
+.sobre-destaque-card {
+  background: var(--prismarine-card);
+  border: 1px solid var(--prismarine-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.sobre-destaque-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(115, 201, 207, 0.08) 0%,
+    rgba(45, 155, 143, 0.08) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sobre-destaque-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(115, 201, 207, 0.15),
+              0 0 40px rgba(45, 155, 143, 0.1);
+  z-index: 2;
+}
+
+.sobre-destaque-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(115, 201, 207, 0.2);
+  border-color: var(--prismarine-accent);
+}
+
+.sobre-destaque-card:hover::before {
+  opacity: 1;
+}
+
+.sobre-destaque-card:hover::after {
+  opacity: 1;
+}
+
 .sobre-destaque-etiqueta {
-  color: var(--prismarine-mid);
+  color: var(--prismarine-accent);
   font-weight: 600;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 .sobre-destaque-card h3 {
-  color: var(--text-dark);
+  color: var(--prismarine-pale);
   font-family: "Outfit", "Montserrat", sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 .sobre-destaque-card p {
-  color: var(--text-dark-muted);
+  color: var(--text-muted);
   font-family: "Outfit", "Montserrat", sans-serif;
+  position: relative;
+  z-index: 3;
 }
 
 .sobre-intro,
@@ -1091,11 +1028,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: var(--header-height-tablet);
   }
 
-  .contato-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
   .objetivos-content {
     padding: 0 1rem;
     text-align: center;
@@ -1421,70 +1353,6 @@ h1, h2, h3, h4, h5, h6 {
   .servicos-intro {
     font-size: 1rem;
   }
-
-  .contato-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .contato-left h2 {
-    font-size: 2rem;
-  }
-
-  .contato-left p {
-    font-size: 1rem;
-  }
-
-  .contato-card {
-    padding: 2rem 1.8rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.6rem;
-  }
-
-  .form-group:last-of-type {
-    margin-bottom: 1.8rem;
-  }
-
-  .form-group label {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    font-size: 0.9rem;
-    padding: 0.8rem 1rem;
-  }
-
-  .form-group textarea {
-    min-height: 120px;
-  }
-
-  .contato-button {
-    padding: 0.95rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .contato-success-card {
-    padding: 2rem 1.8rem;
-  }
-
-  .success-icon {
-    width: 4rem;
-    height: 4rem;
-    font-size: 2rem;
-  }
-
-  .contato-success-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .contato-success-card p {
-    font-size: 0.95rem;
-  }
-
   .app {
     margin-top: var(--header-height-mobile-small);
   }
