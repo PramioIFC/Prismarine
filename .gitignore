@@ -5,3 +5,7 @@ dist
 .env
 .env.*
 !.env.example
+escolar/venv/
+escolar/__pycache__/
+escolar/**/__pycache__/
+escolar/*.sqlite3

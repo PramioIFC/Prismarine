@@ -560,6 +560,17 @@ h1, h2, h3, h4, h5, h6 {
   outline-offset: 3px;
 }
 
+.contato-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.contato-error {
+  color: #ff9e9e;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
 .contato-success {
   text-align: left;
   display: flex;

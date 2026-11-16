@@ -15,6 +15,8 @@ import suporteIcon from './public/equipe/servicosicon/Suporte 247.png'
 import { portfolios } from './portfolios'
 import { useState } from 'react'
 
+const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || 'http://127.0.0.1:8000/api/contact/'
+
 function App() {
   const [selectedMember, setSelectedMember] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
@@ -24,6 +26,8 @@ function App() {
     mensagem: ''
   })
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [formError, setFormError] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -33,9 +37,27 @@ function App() {
     }))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    setFormSubmitted(true)
+    setFormError('')
+    setIsSubmitting(true)
+    try {
+      const response = await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok) {
+        const firstError = result.errors && Object.values(result.errors)[0]
+        throw new Error(firstError || result.error || 'Não foi possível enviar a mensagem.')
+      }
+      setFormSubmitted(true)
+    } catch (error) {
+      setFormError(error.message || 'Não foi possível enviar a mensagem.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const services = [
@@ -469,8 +491,9 @@ function App() {
                     />
                   </div>
 
-                  <button type="submit" className="contato-button">
-                    Enviar mensagem
+                  {formError && <p className="contato-error" role="alert">{formError}</p>}
+                  <button type="submit" className="contato-button" disabled={isSubmitting}>
+                    {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
                   </button>
                 </form>
               ) : (
