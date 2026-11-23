@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    # Registra o app que contém o modelo e a API de contato.
     'contato',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # Permite que o front-end Vite faça chamadas à API em outra origem local.
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,6 +56,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    # Endereços locais autorizados a acessar a API durante o desenvolvimento.
     "http://localhost:5174",
     "http://localhost:5173",
     "http://127.0.0.1:5173",

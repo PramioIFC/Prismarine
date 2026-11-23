@@ -20,15 +20,18 @@ const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || 'http://127.0.0.
 function App() {
   const [selectedMember, setSelectedMember] = useState(null)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  // Guarda os valores atuais digitados nos campos do formulário de contato.
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
     mensagem: ''
   })
+  // Controla a confirmação, os erros e o estado de envio do formulário.
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [formError, setFormError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  // Atualiza o campo correspondente conforme a pessoa digita.
   const handleChange = (event) => {
     const { name, value } = event.target
     setFormData((prev) => ({
@@ -37,11 +40,13 @@ function App() {
     }))
   }
 
+  // Envia os dados à API Django e mostra o resultado recebido.
   const handleSubmit = async (event) => {
     event.preventDefault()
     setFormError('')
     setIsSubmitting(true)
     try {
+      // O POST envia os campos do formulário no corpo da requisição em JSON.
       const response = await fetch(CONTACT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -444,6 +449,7 @@ function App() {
               className={`contato-card servico-card ${formSubmitted ? 'contato-card-success' : ''}`}
               aria-live="polite"
             >
+              {/* Exibe o formulário antes do envio e a confirmação após sucesso. */}
               {!formSubmitted ? (
                 <form className="contato-form" onSubmit={handleSubmit}>
                   <div className="contato-field">
